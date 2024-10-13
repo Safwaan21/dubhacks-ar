@@ -24,14 +24,22 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    {}
+    head: false
+    left_hand: false
+    remoteServiceModule: false
+    right_hand: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    -
-      {}
+    - head: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+      left_hand: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      right_hand: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - // @input SceneObject head
+    - // @input SceneObject left_hand
+    - // @input Asset.RemoteServiceModule remoteServiceModule
+    - // @input SceneObject right_hand
