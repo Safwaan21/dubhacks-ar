@@ -28,6 +28,7 @@
     left_hand: false
     remoteServiceModule: false
     right_hand: false
+    textComp: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
@@ -35,6 +36,7 @@
       remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
       left_hand: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       right_hand: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      textComp: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -43,3 +45,4 @@
     - // @input SceneObject left_hand
     - // @input Asset.RemoteServiceModule remoteServiceModule
     - // @input SceneObject right_hand
+    - // @input Component.Text textComp

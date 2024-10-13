@@ -8,11 +8,15 @@ export class FrameUpdater extends BaseScriptComponent {
     remoteServiceModule: RemoteServiceModule
     @input
     right_hand: SceneObject;
+    @input
+    textComp: Text
+    private starting_data = {};
     private frame_cnt = 0;
     private REFRESH_TIMEOUT = 1; // # of seconds we want between refreshes of data
     private API_URL = "https://dubhacks-api.onrender.com/";
     onAwake() {
         this.createEvent("UpdateEvent").bind(() => this.onUpdate());
+        
     }
     
     onUpdate() {
@@ -65,6 +69,16 @@ export class FrameUpdater extends BaseScriptComponent {
             };
         
         const full_data = {head: head_data, hand: hand_data};
+        
+        
 //        this.performApiRequest("https://dubhacks-api.onrender.com/sendData/", RemoteServiceHttpRequest.HttpRequestMethod.Post, full_data);
+    }
+    
+    computePosture(current_data) {
+        
+    }
+    
+    updateText(newText) {
+        this.textComp.text = newText;
     }
 }

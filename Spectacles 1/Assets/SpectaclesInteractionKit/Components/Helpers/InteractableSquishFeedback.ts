@@ -55,6 +55,7 @@ export class InteractableSquishFeedback extends BaseScriptComponent {
   resetScale() {
       this.squishObject.getTransform().setLocalScale(this.initialScale);
       this.initialPinch = null;
+      print("squished")
   }
 
   updateSquish(event) {
@@ -73,6 +74,7 @@ export class InteractableSquishFeedback extends BaseScriptComponent {
               .getTransform()
               .setLocalScale(vec3.lerp(this.initialScale, this.squishScale, pinchScale));
       }
+//        print("squished")
   }
 
   setupInteractableCallbacks() {
@@ -81,6 +83,6 @@ export class InteractableSquishFeedback extends BaseScriptComponent {
       });
       this.interactable.onHoverUpdate.add(this.updateSquish.bind(this));
       this.interactable.onHoverExit.add(this.resetScale.bind(this));
-      this.interactable.onTriggerCanceled.add(this.resetScale.bind(this));
+//      this.interactable.onTriggerCanceled.add(this.resetScale.bind(this));
   }
 }
